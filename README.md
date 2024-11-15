@@ -1,5 +1,5 @@
 ## Canine Classifier
 
-Your Dog's DNA in a Snap
+This is a FastAPI project using a fine-tuned EfficientNet V2s to identify dog breeds from images. Built in LeWagon Data Science and AI bootcamp.
 
-![Dogs all lined up](https://images.unsplash.com/photo-1494947665470-20322015e3a8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvZ3N8ZW58MHx8MHx8fDI%3D)
+GitHub repo contains Jupyter Notebook to train the model, including the Kaggle dataset used for the fine-tuning.

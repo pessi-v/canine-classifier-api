@@ -17,4 +17,5 @@ RUN pip install -r requirements.txt
 RUN pip install .
 
 # Define the command to run your API
-CMD uvicorn snoop_dog.api.api:app --host 0.0.0.0
+# port configured to $PORT for Google Cloud Run compatibility
+CMD uvicorn snoop_dog.api.api:app --host 0.0.0.0 --port $PORT

@@ -1,16 +1,11 @@
 .env
 .yaml
 .env.yaml
-
-# OS generated files #
-######################
+.envrc
 .DS_Store
 __MACOSX
-# Jupiter Notebook #
 .pytest_cache
 __pycache__
-
-# inteliJ #
 .idea
 *.gz
 *PKG-INFO
@@ -18,9 +13,6 @@ __pycache__
 *.zip
 mlruns
 *.sqlite
-# IDE #
 *.vscode
-
-
-models
 .python-version
+/static

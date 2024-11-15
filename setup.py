@@ -7,7 +7,7 @@ with open("requirements.txt") as f:
 
 setup(name='snoop_dog',
       version="0.0.1",
-      description="A model to classify dog breeds",
-      packages=find_packages(), # You can have several packages, try it
+      description="A FastAPI using a finetunded EfficientNet V2s model to classify dog breeds",
+      packages=find_packages(),
       install_requires=requirements
 )

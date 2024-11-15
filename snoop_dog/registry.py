@@ -9,11 +9,11 @@ import io
 import random
 import string
 
-def load_image(img):
+def load_and_resize_image(img):
     img = Image.open(img).convert("RGB")
-    print("dog is loaded")
+    print("image loaded")
     img = img.resize((256,256))
-    print("dog is resized")
+    print("image resized")
     return img
 
 def dogimg_process(img):
@@ -22,7 +22,7 @@ def dogimg_process(img):
     return img_array
 
 def load_dogmodel():
-    new_model = keras.models.load_model(f"{os.path.dirname(os.path.dirname(__file__))}/models/effnetv2s_finetuned_valsplit01.keras")
+    new_model = keras.models.load_model(f"{os.path.dirname(os.path.dirname(__file__))}/snoop_dog/models/effnetv2s_finetuned_valsplit01.keras")
     return new_model
 
 def gradcam(model, img_array):
@@ -51,7 +51,7 @@ def gradcam(model, img_array):
         last_conv_layer_output[:, :, i] *= pooled_grads[i]
     gradcam = np.mean(last_conv_layer_output, axis=-1)
     gradcam = np.clip(gradcam, 0, np.max(gradcam)) / np.max(gradcam)
-    gradcam = cv2.resize(gradcam, (256, 256)) # Can probably also be done with PIL
+    gradcam = cv2.resize(gradcam, (256, 256))
     fig = plt.figure(visible=True, frameon=False)
     ax = plt.Axes(fig, [0., 0., 1., 1.] )
     fig.set_size_inches(1,1)
